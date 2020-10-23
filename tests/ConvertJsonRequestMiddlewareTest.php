@@ -3,7 +3,7 @@ declare(strict_types = 1);
 
 namespace Tests;
 
-use App\Middleware\ConvertJsonRequestMiddleware;
+use Jalismrs\ApiMiddlewareBundle\ConvertJsonRequestMiddleware;
 use PHPUnit\Framework\TestCase;
 use Psr\Log\Test\TestLogger;
 use Symfony\Component\HttpFoundation\Request;
@@ -15,7 +15,7 @@ use Symfony\Component\HttpKernel\HttpKernelInterface;
  *
  * @package Tests
  *
- * @covers  \App\Middleware\ConvertJsonRequestMiddleware
+ * @covers  \Jalismrs\ApiMiddlewareBundle\ConvertJsonRequestMiddleware
  */
 final class ConvertJsonRequestMiddlewareTest extends
     TestCase
@@ -86,7 +86,7 @@ final class ConvertJsonRequestMiddlewareTest extends
     /**
      * createSUT
      *
-     * @return \App\Middleware\ConvertJsonRequestMiddleware
+     * @return \Jalismrs\ApiMiddlewareBundle\ConvertJsonRequestMiddleware
      */
     private function createSUT() : ConvertJsonRequestMiddleware
     {
