@@ -14,7 +14,7 @@ use Symfony\Component\HttpKernel\HttpKernelInterface;
 /**
  * Class IsApiMiddlewareTest
  *
- * @package Test\Middleware
+ * @package Tests
  *
  * @covers  \Jalismrs\ApiMiddlewareBundle\IsApiControllerMiddleware
  */
