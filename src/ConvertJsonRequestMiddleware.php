@@ -1,7 +1,7 @@
 <?php
 declare(strict_types = 1);
 
-namespace App\Middleware;
+namespace Jalismrs\ApiMiddlewareBundle;
 
 use JsonException;
 use Psr\Log\LoggerInterface;
@@ -13,7 +13,7 @@ use function json_decode;
 /**
  * Class ConvertJsonRequestMiddleware
  *
- * @package App\Middleware
+ * @package Jalismrs\ApiMiddlewareBundle
  */
 final class ConvertJsonRequestMiddleware implements
     EventSubscriberInterface
