@@ -1,6 +1,7 @@
 services:
     _defaults:
-        public: false
+        autowire: true
+        autoconfigure: true
 
     api_middleware.is_api_controller_middleware:
         class: 'Jalismrs\ApiMiddlewareBundle\IsApiControllerMiddleware'
