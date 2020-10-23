@@ -1,8 +1,14 @@
 # Symfony Bundle API Middleware
 
+this bundle helps you protect controller actions
+with an interface tied to a middleware
+
+this bundle also helps you manage json requests by converting json body to ParameterBag
+
+
 ## Test
 
-`phpunit` OU `vendor/bin/phpunit`
+`phpunit` or `vendor/bin/phpunit`
 
 coverage reports will be available in `var/coverage`
 
