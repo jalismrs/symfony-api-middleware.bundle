@@ -8,21 +8,20 @@
   ],
   "autoload" : {
     "psr-4" : {
-      "Jalismrs\\ApiMiddlewareBundle\\" : "src"
+      "Jalismrs\\Symfony\\Bundle\\JalismrsApiMiddlewareBundle\\" : "src/"
     }
   },
   "autoload-dev" : {
     "psr-4" : {
-      "Tests\\" : "tests"
+      "Tests\\" : "tests/"
     }
   },
   "config" : {
     "sort-packages" : true
   },
-  "description" : "Symfony Bundle - API Middleware",
+  "description" : "Adds a protected controller interface and its middleware along with a JSON middleware converter",
   "license": "MIT",
-  "minimum-stability": "dev",
-  "name" : "jalismrs/symfony-api-middleware.bundle",
+  "name" : "jalismrs/symfony.bundle.api-middleware",
   "require-dev" : {
     "composer/package-versions-deprecated" : "*",
     "phpunit/phpunit" : "9.4.2",
@@ -31,6 +30,7 @@
   "require" : {
     "php" : "^7.4",
     "ext-json" : "*",
+    "jalismrs/symfony.common.helpers.event" : "^1.0.0",
     "symfony/config" : "^5.0",
     "symfony/http-kernel" : "^5.0",
     "symfony/dependency-injection": "^5.0",
@@ -38,10 +38,10 @@
   },
   "support" : {
     "email" : "dev@jalis.fr",
-    "issues" : "https://github.com/jalismrs/symfony-api-middleware.bundle/issues",
-    "wiki" : "https://github.com/jalismrs/symfony-api-middleware.bundle/wiki",
-    "source" : "https://github.com/jalismrs/symfony-api-middleware.bundle",
-    "docs" : "https://github.com/jalismrs/symfony-api-middleware.bundle"
+    "issues" : "https://github.com/jalismrs/symfony.bundle.api-middleware/issues",
+    "wiki" : "https://github.com/jalismrs/symfony.bundle.api-middleware/wiki",
+    "source" : "https://github.com/jalismrs/symfony.bundle.api-middleware",
+    "docs" : "https://github.com/jalismrs/symfony.bundle.api-middleware"
   },
   "type" : "symfony-bundle"
 }

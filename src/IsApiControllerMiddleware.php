@@ -1,18 +1,18 @@
 <?php
 declare(strict_types = 1);
 
-namespace Jalismrs\ApiMiddlewareBundle;
+namespace Jalismrs\Symfony\Bundle\JalismrsApiMiddlewareBundle;
 
+use Jalismrs\Symfony\Common\Helpers\EventHelpers;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpKernel\Event\ControllerEvent;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 use Symfony\Component\HttpKernel\KernelEvents;
-use function is_array;
 
 /**
  * Class IsApiControllerMiddleware
  *
- * @package Jalismrs\ApiMiddlewareBundle
+ * @package Jalismrs\Symfony\Bundle\JalismrsApiMiddlewareBundle
  */
 final class IsApiControllerMiddleware implements
     EventSubscriberInterface
@@ -48,7 +48,7 @@ final class IsApiControllerMiddleware implements
         ControllerEvent $controllerEvent
     ) : ControllerEvent {
         $request    = $controllerEvent->getRequest();
-        $controller = self::getController($controllerEvent);
+        $controller = EventHelpers::getController($controllerEvent);
         
         if (
             $controller instanceof IsApiControllerInterface
@@ -56,22 +56,10 @@ final class IsApiControllerMiddleware implements
             !$request->isXmlHttpRequest()
         ) {
             throw new BadRequestHttpException(
-                'You need to set AJAX header'
+                'You need to use an XMLHttpRequest'
             );
         }
         
         return $controllerEvent;
-    }
-    
-    private static function getController(
-        ControllerEvent $event
-    ) : object {
-        $controller = $event->getController();
-        
-        if (is_array($controller)) {
-            $controller = $controller[0];
-        }
-        
-        return $controller;
     }
 }

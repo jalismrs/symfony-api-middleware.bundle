@@ -1,7 +1,7 @@
 <?php
 declare(strict_types = 1);
 
-namespace Jalismrs\ApiMiddlewareBundle;
+namespace Jalismrs\Symfony\Bundle\JalismrsApiMiddlewareBundle;
 
 use JsonException;
 use Psr\Log\LoggerInterface;
@@ -9,11 +9,12 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpKernel\Event\RequestEvent;
 use Symfony\Component\HttpKernel\KernelEvents;
 use function json_decode;
+use const JSON_THROW_ON_ERROR;
 
 /**
  * Class ConvertJsonRequestMiddleware
  *
- * @package Jalismrs\ApiMiddlewareBundle
+ * @package Jalismrs\Symfony\Bundle\JalismrsApiMiddlewareBundle
  */
 final class ConvertJsonRequestMiddleware implements
     EventSubscriberInterface

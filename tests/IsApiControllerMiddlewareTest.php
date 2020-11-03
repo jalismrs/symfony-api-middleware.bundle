@@ -3,8 +3,8 @@ declare(strict_types = 1);
 
 namespace Tests;
 
-use Jalismrs\ApiMiddlewareBundle\IsApiControllerInterface;
-use Jalismrs\ApiMiddlewareBundle\IsApiControllerMiddleware;
+use Jalismrs\Symfony\Bundle\JalismrsApiMiddlewareBundle\IsApiControllerInterface;
+use Jalismrs\Symfony\Bundle\JalismrsApiMiddlewareBundle\IsApiControllerMiddleware;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Event\ControllerEvent;
@@ -16,7 +16,7 @@ use Symfony\Component\HttpKernel\HttpKernelInterface;
  *
  * @package Tests
  *
- * @covers  \Jalismrs\ApiMiddlewareBundle\IsApiControllerMiddleware
+ * @covers  \Jalismrs\Symfony\Bundle\JalismrsApiMiddlewareBundle\IsApiControllerMiddleware
  */
 final class IsApiControllerMiddlewareTest extends
     TestCase
@@ -27,7 +27,6 @@ final class IsApiControllerMiddlewareTest extends
      * @return void
      *
      * @throws \PHPUnit\Framework\ExpectationFailedException
-     * @throws \PHPUnit\Framework\MockObject\RuntimeException
      * @throws \SebastianBergmann\RecursionContext\InvalidArgumentException
      * @throws \Symfony\Component\HttpKernel\Exception\BadRequestHttpException
      */
@@ -69,7 +68,7 @@ final class IsApiControllerMiddlewareTest extends
     /**
      * createSUT
      *
-     * @return \Jalismrs\ApiMiddlewareBundle\IsApiControllerMiddleware
+     * @return \Jalismrs\Symfony\Bundle\JalismrsApiMiddlewareBundle\IsApiControllerMiddleware
      */
     private function createSUT() : IsApiControllerMiddleware
     {
@@ -81,7 +80,6 @@ final class IsApiControllerMiddlewareTest extends
      *
      * @return void
      *
-     * @throws \PHPUnit\Framework\MockObject\RuntimeException
      * @throws \Symfony\Component\HttpKernel\Exception\BadRequestHttpException
      */
     public function testOnKernelControllerThrowsBadRequestHttpException() : void
@@ -112,7 +110,7 @@ final class IsApiControllerMiddlewareTest extends
         
         // expect
         $this->expectException(BadRequestHttpException::class);
-        $this->expectExceptionMessage('You need to set AJAX header');
+        $this->expectExceptionMessage('You need to use an XMLHttpRequest');
         
         // act
         $systemUnderTest->onKernelController($testEvent);

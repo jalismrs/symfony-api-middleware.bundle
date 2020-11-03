@@ -3,12 +3,15 @@ declare(strict_types = 1);
 
 namespace Jalismrs\Symfony\Bundle\JalismrsApiMiddlewareBundle;
 
+use Symfony\Component\HttpKernel\Bundle\Bundle;
+
 /**
- * Interface IsApiControllerInterface
+ * Class ApiMiddlewareBundle
  *
  * @package Jalismrs\Symfony\Bundle\JalismrsApiMiddlewareBundle
  */
-interface IsApiControllerInterface
+class JalismrsApiMiddlewareBundle extends
+    Bundle
 {
 
 }
