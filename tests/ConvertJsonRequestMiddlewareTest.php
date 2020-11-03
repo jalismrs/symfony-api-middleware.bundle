@@ -3,7 +3,7 @@ declare(strict_types = 1);
 
 namespace Tests;
 
-use Jalismrs\ApiMiddlewareBundle\ConvertJsonRequestMiddleware;
+use Jalismrs\Symfony\Bundle\JalismrsApiMiddlewareBundle\ConvertJsonRequestMiddleware;
 use PHPUnit\Framework\TestCase;
 use Psr\Log\Test\TestLogger;
 use Symfony\Component\HttpFoundation\Request;
@@ -15,7 +15,7 @@ use Symfony\Component\HttpKernel\HttpKernelInterface;
  *
  * @package Tests
  *
- * @covers  \Jalismrs\ApiMiddlewareBundle\ConvertJsonRequestMiddleware
+ * @covers  \Jalismrs\Symfony\Bundle\JalismrsApiMiddlewareBundle\ConvertJsonRequestMiddleware
  */
 final class ConvertJsonRequestMiddlewareTest extends
     TestCase
@@ -86,7 +86,7 @@ final class ConvertJsonRequestMiddlewareTest extends
     /**
      * createSUT
      *
-     * @return \Jalismrs\ApiMiddlewareBundle\ConvertJsonRequestMiddleware
+     * @return \Jalismrs\Symfony\Bundle\JalismrsApiMiddlewareBundle\ConvertJsonRequestMiddleware
      */
     private function createSUT() : ConvertJsonRequestMiddleware
     {
@@ -94,14 +94,11 @@ final class ConvertJsonRequestMiddlewareTest extends
             $this->testLogger
         );
     }
-
+    
     /**
      * setUp
      *
      * @return void
-     *
-     * @throws \Symfony\Component\DependencyInjection\Exception\ServiceCircularReferenceException
-     * @throws \Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException
      */
     protected function setUp() : void
     {

@@ -4,6 +4,7 @@ declare(strict_types = 1);
 namespace Tests;
 
 use function json_encode;
+use const JSON_THROW_ON_ERROR;
 
 /**
  * Class ConvertJsonRequestMiddlewareProvider

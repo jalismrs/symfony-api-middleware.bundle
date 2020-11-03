@@ -1,7 +1,7 @@
 <?php
 declare(strict_types = 1);
 
-namespace Jalismrs\ApiMiddlewareBundle\DependencyInjection;
+namespace Jalismrs\Symfony\Bundle\JalismrsApiMiddlewareBundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Extension\Extension;
@@ -11,9 +11,9 @@ use Symfony\Component\Config\FileLocator;
 /**
  * Class ApiMiddlewareExtension
  *
- * @package Jalismrs\ApiMiddlewareBundle\DependencyInjection
+ * @package Jalismrs\Symfony\Bundle\JalismrsApiMiddlewareBundle\DependencyInjection
  */
-class ApiMiddlewareExtension extends
+class JalismrsApiMiddlewareExtension extends
     Extension
 {
     /**

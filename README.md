@@ -1,10 +1,6 @@
-# Symfony Bundle API Middleware
+# symfony.bundle.api-middleware
 
-this bundle helps you protect controller actions
-with an interface tied to a middleware
-
-this bundle also helps you manage json requests by converting json body to ParameterBag
-
+Adds a protected controller interface and its middleware along with a JSON middleware converter
 
 ## Test
 
@@ -15,7 +11,7 @@ coverage reports will be available in `var/coverage`
 ## Use
 
 ```php
-use Jalismrs\ApiMiddlewareBundle\IsApiControllerInterface;
+use Jalismrs\Symfony\Bundle\JalismrsApiMiddlewareBundle\IsApiControllerInterface;
 
 class SomeController implements IsApiControllerInterface {
 

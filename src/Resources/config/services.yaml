@@ -3,8 +3,8 @@ services:
         autowire: true
         autoconfigure: true
     
-    api_middleware.convert_json_request_middleware:
-        class: 'Jalismrs\ApiMiddlewareBundle\ConvertJsonRequestMiddleware'
-    
-    api_middleware.is_api_controller_middleware:
-        class: 'Jalismrs\ApiMiddlewareBundle\IsApiControllerMiddleware'
+    jalismrs_api_middleware.convert_json_request_middleware:
+        class: 'Jalismrs\Symfony\Bundle\JalismrsApiMiddlewareBundle\ConvertJsonRequestMiddleware'
+
+    jalismrs_api_middleware.is_api_controller_middleware:
+        class: 'Jalismrs\Symfony\Bundle\JalismrsApiMiddlewareBundle\IsApiControllerMiddleware'
