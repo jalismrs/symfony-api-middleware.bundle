@@ -1,8 +1,9 @@
 <?php
 declare(strict_types = 1);
 
-namespace Jalismrs\Symfony\Bundle\JalismrsApiMiddlewareBundle;
+namespace Jalismrs\Symfony\Bundle\JalismrsApiMiddlewareBundle\EventSubscriber;
 
+use Jalismrs\Symfony\Bundle\JalismrsApiMiddlewareBundle\IsApiControllerInterface;
 use Jalismrs\Symfony\Common\Helpers\EventHelpers;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpKernel\Event\ControllerEvent;
@@ -12,7 +13,7 @@ use Symfony\Component\HttpKernel\KernelEvents;
 /**
  * Class IsApiControllerMiddleware
  *
- * @package Jalismrs\Symfony\Bundle\JalismrsApiMiddlewareBundle
+ * @package Jalismrs\Symfony\Bundle\JalismrsApiMiddlewareBundle\EventSubscriber
  */
 final class IsApiControllerMiddleware implements
     EventSubscriberInterface

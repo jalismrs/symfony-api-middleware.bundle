@@ -1,7 +1,7 @@
 <?php
 declare(strict_types = 1);
 
-namespace Tests;
+namespace Tests\EventSubscriber;
 
 use function json_encode;
 use const JSON_THROW_ON_ERROR;
@@ -9,7 +9,7 @@ use const JSON_THROW_ON_ERROR;
 /**
  * Class ConvertJsonRequestMiddlewareProvider
  *
- * @package Tests
+ * @package Tests\EventSubscriber
  */
 final class ConvertJsonRequestMiddlewareProvider
 {
@@ -25,7 +25,7 @@ final class ConvertJsonRequestMiddlewareProvider
         $parameters = [
             'name' => 'value',
         ];
-
+        
         return [
             'no content'      => [
                 'input'  => [

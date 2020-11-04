@@ -1,10 +1,10 @@
 <?php
 declare(strict_types = 1);
 
-namespace Tests;
+namespace Tests\EventSubscriber;
 
+use Jalismrs\Symfony\Bundle\JalismrsApiMiddlewareBundle\EventSubscriber\IsApiControllerMiddleware;
 use Jalismrs\Symfony\Bundle\JalismrsApiMiddlewareBundle\IsApiControllerInterface;
-use Jalismrs\Symfony\Bundle\JalismrsApiMiddlewareBundle\IsApiControllerMiddleware;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Event\ControllerEvent;
@@ -14,9 +14,9 @@ use Symfony\Component\HttpKernel\HttpKernelInterface;
 /**
  * Class IsApiMiddlewareTest
  *
- * @package Tests
+ * @package Tests\EventSubscriber
  *
- * @covers  \Jalismrs\Symfony\Bundle\JalismrsApiMiddlewareBundle\IsApiControllerMiddleware
+ * @covers  \Jalismrs\Symfony\Bundle\JalismrsApiMiddlewareBundle\EventSubscriber\IsApiControllerMiddleware
  */
 final class IsApiControllerMiddlewareTest extends
     TestCase
@@ -68,7 +68,7 @@ final class IsApiControllerMiddlewareTest extends
     /**
      * createSUT
      *
-     * @return \Jalismrs\Symfony\Bundle\JalismrsApiMiddlewareBundle\IsApiControllerMiddleware
+     * @return \Jalismrs\Symfony\Bundle\JalismrsApiMiddlewareBundle\EventSubscriber\IsApiControllerMiddleware
      */
     private function createSUT() : IsApiControllerMiddleware
     {
