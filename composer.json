@@ -21,7 +21,7 @@
   },
   "description" : "Adds a protected controller interface and its middleware along with a JSON middleware converter",
   "license": "MIT",
-  "name" : "jalismrs/symfony.bundle.api-middleware",
+  "name" : "jalismrs/symfony.bundle.middleware.api",
   "require-dev" : {
     "composer/package-versions-deprecated" : "*",
     "phpunit/phpunit" : "9.4.2",
@@ -38,10 +38,10 @@
   },
   "support" : {
     "email" : "dev@jalis.fr",
-    "issues" : "https://github.com/jalismrs/symfony.bundle.api-middleware/issues",
-    "wiki" : "https://github.com/jalismrs/symfony.bundle.api-middleware/wiki",
-    "source" : "https://github.com/jalismrs/symfony.bundle.api-middleware",
-    "docs" : "https://github.com/jalismrs/symfony.bundle.api-middleware"
+    "issues" : "https://github.com/jalismrs/symfony.bundle.middleware.api/issues",
+    "wiki" : "https://github.com/jalismrs/symfony.bundle.middleware.api/wiki",
+    "source" : "https://github.com/jalismrs/symfony.bundle.middleware.api",
+    "docs" : "https://github.com/jalismrs/symfony.bundle.middleware.api"
   },
   "type" : "symfony-bundle"
 }
