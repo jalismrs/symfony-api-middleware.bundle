@@ -4,7 +4,7 @@ services:
         autoconfigure: true
     
     jalismrs_api_middleware.convert_json_request_middleware:
-        class: 'Jalismrs\Symfony\Bundle\JalismrsApiMiddlewareBundle\ConvertJsonRequestMiddleware'
+        class: 'Jalismrs\Symfony\Bundle\JalismrsApiMiddlewareBundle\EventSubscriber\ConvertJsonRequestMiddleware'
 
     jalismrs_api_middleware.is_api_controller_middleware:
-        class: 'Jalismrs\Symfony\Bundle\JalismrsApiMiddlewareBundle\IsApiControllerMiddleware'
+        class: 'Jalismrs\Symfony\Bundle\JalismrsApiMiddlewareBundle\EventSubscriber\IsApiControllerMiddleware'

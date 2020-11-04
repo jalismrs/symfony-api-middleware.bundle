@@ -1,9 +1,9 @@
 <?php
 declare(strict_types = 1);
 
-namespace Tests;
+namespace Tests\EventSubscriber;
 
-use Jalismrs\Symfony\Bundle\JalismrsApiMiddlewareBundle\ConvertJsonRequestMiddleware;
+use Jalismrs\Symfony\Bundle\JalismrsApiMiddlewareBundle\EventSubscriber\ConvertJsonRequestMiddleware;
 use PHPUnit\Framework\TestCase;
 use Psr\Log\Test\TestLogger;
 use Symfony\Component\HttpFoundation\Request;
@@ -13,9 +13,9 @@ use Symfony\Component\HttpKernel\HttpKernelInterface;
 /**
  * Class ConvertJsonRequestMiddlewareTest
  *
- * @package Tests
+ * @package Tests\EventSubscriber
  *
- * @covers  \Jalismrs\Symfony\Bundle\JalismrsApiMiddlewareBundle\ConvertJsonRequestMiddleware
+ * @covers  \Jalismrs\Symfony\Bundle\JalismrsApiMiddlewareBundle\EventSubscriber\ConvertJsonRequestMiddleware
  */
 final class ConvertJsonRequestMiddlewareTest extends
     TestCase
@@ -26,7 +26,7 @@ final class ConvertJsonRequestMiddlewareTest extends
      * @var \Psr\Log\Test\TestLogger
      */
     private TestLogger $testLogger;
-
+    
     /**
      * testOnKernelRequest
      *
@@ -40,7 +40,7 @@ final class ConvertJsonRequestMiddlewareTest extends
      * @throws \SebastianBergmann\RecursionContext\InvalidArgumentException
      * @throws \Symfony\Component\HttpFoundation\Exception\BadRequestException
      *
-     * @dataProvider \Tests\ConvertJsonRequestMiddlewareProvider::provideOnKernelRequest
+     * @dataProvider \Tests\EventSubscriber\ConvertJsonRequestMiddlewareProvider::provideOnKernelRequest
      */
     public function testOnKernelRequest(
         array $providedInput,
@@ -48,9 +48,9 @@ final class ConvertJsonRequestMiddlewareTest extends
     ) : void {
         // arrange
         $systemUnderTest = $this->createSUT();
-
+        
         $mockHttpKernel = $this->createMock(HttpKernelInterface::class);
-        $testRequest = new Request(
+        $testRequest    = new Request(
             [],
             $providedInput['request'],
             [],
@@ -65,10 +65,10 @@ final class ConvertJsonRequestMiddlewareTest extends
             $testRequest,
             null
         );
-
+        
         // act
         $output = $systemUnderTest->onKernelRequest($event);
-
+        
         // assert
         self::assertSame(
             $event,
@@ -82,11 +82,11 @@ final class ConvertJsonRequestMiddlewareTest extends
                 ->all()
         );
     }
-
+    
     /**
      * createSUT
      *
-     * @return \Jalismrs\Symfony\Bundle\JalismrsApiMiddlewareBundle\ConvertJsonRequestMiddleware
+     * @return \Jalismrs\Symfony\Bundle\JalismrsApiMiddlewareBundle\EventSubscriber\ConvertJsonRequestMiddleware
      */
     private function createSUT() : ConvertJsonRequestMiddleware
     {
@@ -103,7 +103,7 @@ final class ConvertJsonRequestMiddlewareTest extends
     protected function setUp() : void
     {
         parent::setUp();
-
+        
         $this->testLogger = new TestLogger();
     }
 }

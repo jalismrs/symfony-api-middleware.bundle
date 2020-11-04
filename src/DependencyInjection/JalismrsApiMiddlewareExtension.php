@@ -9,7 +9,7 @@ use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 use Symfony\Component\Config\FileLocator;
 
 /**
- * Class ApiMiddlewareExtension
+ * Class JalismrsApiMiddlewareExtension
  *
  * @package Jalismrs\Symfony\Bundle\JalismrsApiMiddlewareBundle\DependencyInjection
  */
