@@ -1,7 +1,7 @@
 <?php
 declare(strict_types = 1);
 
-namespace Jalismrs\Symfony\Bundle\JalismrsApiMiddlewareBundle;
+namespace Jalismrs\Symfony\Bundle\JalismrsApiMiddlewareBundle\EventSubscriber;
 
 use JsonException;
 use Psr\Log\LoggerInterface;
@@ -14,7 +14,7 @@ use const JSON_THROW_ON_ERROR;
 /**
  * Class ConvertJsonRequestMiddleware
  *
- * @package Jalismrs\Symfony\Bundle\JalismrsApiMiddlewareBundle
+ * @package Jalismrs\Symfony\Bundle\JalismrsApiMiddlewareBundle\EventSubscriber
  */
 final class ConvertJsonRequestMiddleware implements
     EventSubscriberInterface
@@ -25,7 +25,7 @@ final class ConvertJsonRequestMiddleware implements
      * @var \Psr\Log\LoggerInterface
      */
     private LoggerInterface $logger;
-
+    
     /**
      * ConvertJsonRequestMiddleware constructor.
      *
@@ -36,7 +36,7 @@ final class ConvertJsonRequestMiddleware implements
     ) {
         $this->logger = $middlewareLogger;
     }
-
+    
     /**
      * getSubscribedEvents
      *
@@ -68,10 +68,10 @@ final class ConvertJsonRequestMiddleware implements
         RequestEvent $requestEvent
     ) : RequestEvent {
         $request = $requestEvent->getRequest();
-
+        
         if ($request->request->count() === 0) {
             $content = $request->getContent();
-
+            
             if (!empty($content)) {
                 try {
                     $parameters = json_decode(
@@ -80,14 +80,14 @@ final class ConvertJsonRequestMiddleware implements
                         512,
                         JSON_THROW_ON_ERROR
                     );
-
+                    
                     $request->request->replace($parameters);
                 } catch (JsonException $jsonException) {
                     $this->logger->error($jsonException);
                 }
             }
         }
-
+        
         return $requestEvent;
     }
 }
