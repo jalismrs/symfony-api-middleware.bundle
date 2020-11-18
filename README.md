@@ -1,4 +1,4 @@
-# symfony.bundle.api-middleware
+# symfony.bundle.middleware.api
 
 Adds a protected controller interface and its middleware along with a JSON middleware converter
 
@@ -11,9 +11,7 @@ coverage reports will be available in `var/coverage`
 ## Use
 
 ```php
-use Jalismrs\Symfony\Bundle\JalismrsApiMiddlewareBundle\IsApiControllerInterface;
-
-class SomeController implements IsApiControllerInterface {
+class SomeController implements IsApiControllerInterfac {
 
 }
 ```
