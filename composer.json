@@ -28,7 +28,7 @@
     "roave/security-advisories" : "dev-master"
   },
   "require" : {
-    "php" : "^7.4",
+    "php" : "^7.4 || ^8.0",
     "ext-json" : "*",
     "jalismrs/symfony.common.helpers.event" : "^1.0.0",
     "symfony/config" : "^5.0",
